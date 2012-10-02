@@ -1,0 +1,92 @@
+body { background-color: #fff; }
+#outer_wrapper { width: 768px; margin: 0 auto; overflow:hidden; background-color:#fff; } 
+header { background-color: red; position:fixed; height:200px; width:768px; z-index: 100; top:0; }
+nav{ background: #000 url(../img/navbar.png) no-repeat 0 0; width:100%; height:40px; }
+.top-bar { height:40px; width:100%; } 
+.teaser-image { width: 250px; height:100px; margin: 0 10px; float:left   }
+#home { float: right; padding-right: 20px;  }
+#sortable, .art-grid { list-style-type: none; margin: 0; padding: 0; width: 100%; display:block; white-space: nowrap; }
+#sortable li, .art-grid li { margin:1% 0; height: 320px; width:100%; background:#fff;}
+.dragger { height:100%; width:100px; float:right; }
+.item{  position: relative; background-color: #fff;float:left; margin-right:10px;}
+#art-container { position: relative; height:0px; overflow-x:hidden; margin-top:200px; }
+#art{position:absolute; width: 768px; background-color:#999; height:1000px; z-index:99; display:none; overflow-x:hidden;   }
+#homepage { margin-top: 200px;}
+
+/* slider container */
+.iosSlider {
+	position: relative;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	width: 100%;
+	height: 280px;
+}
+
+/* slider */
+.iosSlider .slider {
+	width: 100%;
+	height: 100%;
+}
+
+/* slide */
+.iosSlider .slider .slide {
+	float: left;
+    background-color: #eee;
+	width: 100%;
+	height: 100%;
+}
+
+/* Run on click the drag then no timer is required  */
+.height-transform-hide {
+    height: 40px!important;
+    -webkit-transition: height .5s ease;
+       -moz-transition: height .5s ease;
+            transition: height .5s ease;
+}
+
+.height-transform-show {
+    height: 320px!important;
+    -webkit-transition: height .5s ease;
+       -moz-transition: height .5s ease;
+            transition: height .5s ease;
+}
+
+
+.item span {
+   width: 0px;
+   height: 0px;
+   position: absolute;
+   top: -1px;
+   right: -1px;
+   border-style: solid;
+   background: hsla(260,5%,60%,0.7);
+   -webkit-border-bottom-left-radius: 15px;
+   -moz-border-radius: 0 0 0 15px;
+   border-radius: 0 0 0 15px;
+   border-color: #fff #fff transparent transparent;
+   -webkit-transition: border-width 0.1s ease-out;
+   -moz-transition: border-width 0.1s ease-out;
+   -ms-transition: border-width 0.1s ease-out;
+   -o-transition: border-width 0.1s ease-out;
+   transition: border-width 0.1s ease-out;
+} 
+
+.folded-corner { border-width: 0 70px 70px 0; }
+
+
+/*http://css3.bradshawenterprises.com/flip/
+Check why anim doesn't work for fold?
+*/
+
+.art-anim {
+	display: block !important;
+	-webkit-transition: all 1s ease-out;
+}
+
+.homepage-anim {
+	display: block !important;
+	-webkit-transition: all 1s ease-out;
+}
+
+.read { }
