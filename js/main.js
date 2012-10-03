@@ -1,5 +1,5 @@
 $(function() {
-	
+
 	var $sortable = $( "#sortable" );
 	
 	$sortable.sortable({
@@ -16,14 +16,33 @@ $(function() {
 	$sortable.sortable({ handle: '.dragger' });
 	//$sortable.sortable("disable");
 	
-	$(".dragger").click(function() {
-		//$sortable.find('li').removeClass('height-transform-show').addClass('height-transform-hide');
-		$sortable.sortable("enable");
-	});
+	
+	var $item = $(".item") 
+	var $homepage = $('#homepage');
+	var $art = $('#art');
+	var $homeBtn = $("#home");
+	
+	$item.click(function() {
+		 $homepage.removeClass('lightSpeedIn').addClass('animated lightSpeedOut'); 
+		 $art.fadeIn('slow');
+		 $homeBtn.fadeIn('slow'); 
+		 $('body,html').animate({
+			scrollTop: 0
+		 }, 800);
+		 
+	 }); 
+	
+	$homeBtn.click(function() {
+		  $homepage.removeClass('lightSpeedOut').addClass('animated lightSpeedIn'); 
+		  $art.fadeOut('fast');
+		  $homeBtn.fadeOut('fast');
+		 		  
+	 }); 
+	
 	
 	bindKeyDown();
 	
-	$(".item").each(function(){
+	$item.each(function(){
 	
 		this.addEventListener("touchstart", touchStart, false);
 	
@@ -34,9 +53,11 @@ $(function() {
 			
 		var targetTouches = event.targetTouches;
 		
-		if(targetTouches.length == 2) 
-			$(this).find('span').addClass('folded-corner');	
-	   
+		if(targetTouches.length == 2) {
+			
+			$(this).find('span').toggleClass('folded-corner');	
+		
+		}
 	};
 	
 	$('.iosSlider').iosSlider({
@@ -49,8 +70,6 @@ $(function() {
 		navNextSelector: $('.next'),
 		navPrevSelector: $('.prev'),
 	});
-	
-			
 	
 });
 
