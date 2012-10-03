@@ -36,6 +36,9 @@ $(function() {
 		  $homepage.removeClass('lightSpeedOut').addClass('animated lightSpeedIn'); 
 		  $art.fadeOut('fast');
 		  $homeBtn.fadeOut('fast');
+		  $('body,html').animate({
+			scrollTop: 0
+		  }, 800);
 		 		  
 	 }); 
 	

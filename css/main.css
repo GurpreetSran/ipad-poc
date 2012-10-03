@@ -8,9 +8,9 @@ nav{  position:fixed; z-index: 100; background: #000 url(../img/navbar.png) no-r
 #sortable, .art-grid { list-style-type: none; margin: 0; padding: 0; width: 100%; display:block; white-space: nowrap; }
 #sortable li, .art-grid li { margin:1% 0; height: 320px; width:100%; background:#fff;}
 .dragger { height:100%; width:100px; float:right; }
-.item{  position: relative; background-color: #fff;float:left; margin-right:10px;}
+.item{  position: relative; background-color: #fff;float:left; margin:10px 5px;;}
 #art-container { position: relative; height:0; overflow-x:hidden; }
-#art{position:absolute; width: 768px; background-color:#666; height:1000px; overflow-x:hidden; top:210px; display:none;   }
+#art{position:absolute; width: 768px; overflow-x:hidden; top:40px; display:none; background:#fff;  }
 #homepage { position:relative; background:#fff; }
 
 /* slider container */
@@ -58,21 +58,21 @@ nav{  position:fixed; z-index: 100; background: #000 url(../img/navbar.png) no-r
    height: 0px;
    position: absolute;
    top: -1px;
-   right: -1px;
+   left: -1px;
    border-style: solid;
    background: hsla(260,5%,60%,0.7);
-   -webkit-border-bottom-left-radius: 15px;
-   -moz-border-radius: 0 0 0 15px;
-   border-radius: 0 0 0 15px;
-   border-color: #fff #fff transparent transparent;
+   -webkit-border-bottom-right-radius: 15px;
+   -moz-border-radius: 0 0 15px 0;
+   border-radius: 0 0 15px 0;
+   border-color: #fff transparent transparent #fff;
    -webkit-transition: border-width 0.1s ease-out;
    -moz-transition: border-width 0.1s ease-out;
    -ms-transition: border-width 0.1s ease-out;
    -o-transition: border-width 0.1s ease-out;
-   transition: border-width 0.1s ease-out;
+   transition: border-width 0.1s ease-out;  
 } 
 
-.folded-corner { border-width: 0 70px 70px 0; }
+.folded-corner { border-width: 70px 70px 0 0; }
 
 
 /*http://css3.bradshawenterprises.com/flip/
