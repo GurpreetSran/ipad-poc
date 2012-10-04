@@ -20,13 +20,13 @@ $(function() {
 	var $item = $(".item") 
 	var $homepage = $('#homepage');
 	var $art = $('#art');
-	var $homeBtn = $("#home");
+	var $home = $("#home");
 	
 	$item.click(function() {
          
 		 $homepage.removeClass('lightSpeedIn').addClass('animated lightSpeedOut'); 
 		 $art.fadeIn('slow');
-		 $homeBtn.fadeIn('slow'); 
+		 $home.css('visibility','visible'); 
 		 
 		 $('body,html').animate({
 			scrollTop: 0
@@ -38,11 +38,11 @@ $(function() {
 		
 	 }); 
 	
-	$homeBtn.click(function() {
+	$home.click(function() {
 		  $homepage.css('display','block');
 		  $homepage.removeClass('lightSpeedOut').addClass('animated lightSpeedIn'); 
 		  $art.fadeOut('slow');
-		  $homeBtn.fadeOut('slow');
+		  $home.css('visibility','hidden');
 		  $('body,html').animate({
 			scrollTop: 0
 		  }, 800);
@@ -64,9 +64,15 @@ $(function() {
 		var targetTouches = event.targetTouches;
 		
 		if(targetTouches.length == 2) {
-			
 			$(this).find('span').toggleClass('folded-corner');	
-		
+			
+			if($(this).find('span').hasClass('folded-corner'))
+				$('#bookmark').addClass('animated wobble');	
+			
+			setTimeout(function() {
+				$('#bookmark').removeClass('animated wobble');	
+			}, 500);
+			
 		}
 	};
 	
