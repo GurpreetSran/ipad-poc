@@ -41,8 +41,8 @@ $(function() {
 	$homeBtn.click(function() {
 		  $homepage.css('display','block');
 		  $homepage.removeClass('lightSpeedOut').addClass('animated lightSpeedIn'); 
-		  $art.fadeOut('fast');
-		  $homeBtn.fadeOut('fast');
+		  $art.fadeOut('slow');
+		  $homeBtn.fadeOut('slow');
 		  $('body,html').animate({
 			scrollTop: 0
 		  }, 800);
