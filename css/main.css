@@ -1,6 +1,6 @@
-body { background-color: #fff; padding:0; margin:0; }
+body { background-color: #fff; padding:0; margin:0; visibility:hidden; }
 #outer_wrapper { width: 768px; margin: 0 auto; overflow:hidden; background-color:#fff; } 
-header { background-color: red; height:200px; width:100%; }
+header { background-color: red; height:200px; width:768px; }
 nav{  position:fixed; z-index: 100; background: #000 url(../img/navbar.png) no-repeat 0 0; width:100%; height:40px; width:768px; }
 .top-bar { height:40px; width:100%; } 
 .teaser-image { width: 250px; height:100px; margin: 0 10px; float:left   }
@@ -8,7 +8,7 @@ nav{  position:fixed; z-index: 100; background: #000 url(../img/navbar.png) no-r
 #sortable, .art-grid { list-style-type: none; margin: 0; padding: 0; width: 100%; display:block; white-space: nowrap; }
 #sortable li, .art-grid li { margin:1% 0; height: 320px; width:100%; background:#fff;}
 .dragger { height:100%; width:100px; float:right; }
-.item{  position: relative; background-color: #fff;float:left; margin:10px 5px;;}
+.item{  position: relative; background-color: #fff;float:left; margin:10px 5px;}
 #art-container { position: relative; height:0; overflow-x:hidden; }
 #art{position:absolute; width: 768px; overflow-x:hidden; top:40px; display:none; background:#fff;  }
 #homepage { position:relative; background:#fff; }

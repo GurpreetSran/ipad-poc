@@ -23,16 +23,23 @@ $(function() {
 	var $homeBtn = $("#home");
 	
 	$item.click(function() {
+         
 		 $homepage.removeClass('lightSpeedIn').addClass('animated lightSpeedOut'); 
 		 $art.fadeIn('slow');
 		 $homeBtn.fadeIn('slow'); 
+		 
 		 $('body,html').animate({
 			scrollTop: 0
 		 }, 800);
 		 
+		 setTimeout(function() {
+			$homepage.css('display','none');
+		 }, 400);
+		
 	 }); 
 	
 	$homeBtn.click(function() {
+		  $homepage.css('display','block');
 		  $homepage.removeClass('lightSpeedOut').addClass('animated lightSpeedIn'); 
 		  $art.fadeOut('fast');
 		  $homeBtn.fadeOut('fast');
@@ -63,16 +70,6 @@ $(function() {
 		}
 	};
 	
-	$('.iosSlider').iosSlider({
-		snapToChildren: true,
-		desktopClickDrag: true,
-		keyboardControls: true,
-		onSliderLoaded: sliderTest,
-		onSlideStart: sliderTest,
-		onSlideComplete: slideComplete,
-		navNextSelector: $('.next'),
-		navPrevSelector: $('.prev'),
-	});
 	
 });
 
@@ -103,9 +100,7 @@ function bindKeyDown() {
 	foo.sortable('options');
 
 }
-
-
-			
+	
 function sliderTest(args) {
 	//console.log(args.targetSliderOffset);
 }
@@ -125,5 +120,23 @@ function slideComplete(args) {
 	}
 
 }
+
+$(window).load(function() {
+	 
+	 $('.iosSlider').iosSlider({
+		snapToChildren: true,
+		desktopClickDrag: true,
+		keyboardControls: true,
+		onSliderLoaded: sliderTest,
+		onSlideStart: sliderTest,
+		onSlideComplete: slideComplete,
+		navNextSelector: $('.next'),
+		navPrevSelector: $('.prev'),
+	});
+	 
+	 $('body').css('visibility', 'visible').css('display','none'); 	
+     $('body').fadeIn('slow');
+
+});
 			
 			
