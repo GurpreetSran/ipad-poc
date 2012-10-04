@@ -133,6 +133,7 @@ $(window).load(function() {
 		snapToChildren: true,
 		desktopClickDrag: true,
 		keyboardControls: true,
+		scrollbarHide: true,
 		onSliderLoaded: sliderTest,
 		onSlideStart: sliderTest,
 		onSlideComplete: slideComplete,
