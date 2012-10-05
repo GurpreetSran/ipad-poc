@@ -66,13 +66,19 @@ $(function() {
 		if(targetTouches.length == 2) {
 			$(this).find('span').toggleClass('folded-corner');	
 			
-			if($(this).find('span').hasClass('folded-corner'))
-				$('#bookmark').addClass('animated wobble');	
+			if($(this).find('span').hasClass('folded-corner')) {
+				//alert('add');
+				$(this).find('span img').fadeIn('fast');
+				$('img.star').css('z-index','5');
+				$('img.star').addClass('star-anim');	
+			} else {
+				$(this).find('span img').fadeOut('fast');
+			}
 			
 			setTimeout(function() {
-				$('#bookmark').removeClass('animated wobble');	
+				$('img.star').removeClass('star-anim');	
+				$('img.star').css('z-index','-1');
 			}, 500);
-			
 		}
 	};
 	

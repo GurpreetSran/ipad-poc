@@ -5,16 +5,24 @@ nav{  position:fixed; z-index: 100; background: #000 url(../img/navbar.png) no-r
 .top-bar { height:40px; width:100%; } 
 .teaser-image { width: 250px; height:100px; margin: 0 10px; float:left   }
 #sortable, .art-grid { list-style-type: none; margin: 0; padding: 0; width: 100%; display:block; white-space: nowrap; }
-#sortable li, .art-grid li { margin:1% 0; height: 320px; width:100%; background:#fff;}
+#sortable li, .art-grid li { margin:0 0 1% 0; height: 320px; width:100%; background:#fff;}
 .dragger { height:100%; width:100px; float:right; }
-.item{  position: relative; background-color: #fff;float:left; margin:10px 5px;}
+.item{  position: relative; background-color: #fff;float:left; margin:10px 3px; background: url(../img/star.png) no-repeat 0 0; }
 #art-container { position: relative; height:0; overflow-x:hidden; }
 #art{position:absolute; width: 768px; overflow-x:hidden; top:40px; display:none; background:#fff;  }
 #homepage { position:relative; background:#fff; }
-#nav-btns { width:300px; height:40px; float:right; padding-right: 20px;  }
-#bookmark { width:30px; height:100%; margin: 0 10px; float:right; background-color:yellow; }
-#home { visibility:hidden; height:100%; margin: 0 10px; float:right;  }
+#nav-btns { width:300px; height:40px; float:right; padding-right: 20px; }
+#home { visibility:hidden; float:right; width:40px; margin-top:7px;  }
+#bookmark { position:absolute; top: -255px; left: 14px; pointer-events:none;}
+.star { position:absolute; right: 106px; top: 3px; z-index:-1; }
 
+.star-anim{		
+	-webkit-transform:rotate(365deg) scale(5);
+	opacity: 0;
+	-webkit-transition: all 1s; 	 
+}
+				
+				
 /* slider container */
 .iosSlider {
 	position: relative;
@@ -71,11 +79,12 @@ nav{  position:fixed; z-index: 100; background: #000 url(../img/navbar.png) no-r
    -moz-transition: border-width 0.1s ease-out;
    -ms-transition: border-width 0.1s ease-out;
    -o-transition: border-width 0.1s ease-out;
-   transition: border-width 0.1s ease-out;  
+   transition: border-width 0.1s ease-out;   
 } 
 
 .folded-corner { border-width: 70px 70px 0 0; }
 
+.item span img { position:relative; left: -5px; top:-66px; display:none;  }
 
 /*http://css3.bradshawenterprises.com/flip/
 Check why anim doesn't work for fold?
