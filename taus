@@ -1,0 +1,23 @@
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 7d77695..5bf543e 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -20,17 +20,7 @@[m
+ 		  </header>[m
+ 		  <div>[m
+ 			<div id="art">[m
+[31m-				asdf sdf sd[m
+[31m-				sd [m
+[31m-				sd[m
+[31m-				f sd[m
+[31m-				fsd f[m
+[31m-				 sdfsdfsd fsdf[m
+[31m-				 sdf sdf/n/n/n/n/asdas[m
+[31m-				 d [m
+[31m-				 asd[m
+[31m-				  as[m
+[31m-				  [m
+[32m+[m				[32m<img src="http://img.thesun.co.uk/multimedia/archive/01595/Megan-Stammers-MAI_1595293a.jpg" />[m
+ 			</div>[m
+ 		  </div>[m
+ 		  <div id="homepage" data-test="fadeOutDown">[m
