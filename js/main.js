@@ -41,14 +41,40 @@ $(function() {
 	$home.click(function() {
 		  $homepage.css('display','block');
 		  $homepage.removeClass('lightSpeedOut').addClass('animated lightSpeedIn'); 
+		  $()
 		  $art.fadeOut('slow');
 		  $home.css('visibility','hidden');
 		  $('body,html').animate({
 			scrollTop: 0
 		  }, 800);
-		 		  
-	 }); 
+	 });
 	
+	$(".expand").click(function(){
+	    var elem = $(this).parent().clone();
+		$('#expanded-section').prepend(elem);
+		$('.collapse').css('visibility','visible');
+		$('.ui-sortable').fadeOut('fast');
+		$('#expanded-section').fadeIn('fast');	
+		 
+         $('body,html').animate({
+			scrollTop: 0
+		  }, 800);		 
+		
+	 });	
+	
+	$(".collapse").live("click", function(){
+		$(this).parent().remove();
+		$('.ui-sortable').fadeIn('fast');
+		$('#expanded-section').fadeOut('fast');		
+		$('.collapse').css('visibility','hidden');
+		
+		 $('body,html').animate({
+			scrollTop: 0
+		  }, 800);
+	 });
+     
+   	
+		
 	
 	bindKeyDown();
 	
