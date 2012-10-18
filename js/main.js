@@ -41,7 +41,6 @@ $(function() {
 	$home.click(function() {
 		  $homepage.css('display','block');
 		  $homepage.removeClass('lightSpeedOut').addClass('animated lightSpeedIn'); 
-		  $()
 		  $art.fadeOut('slow');
 		  $home.css('visibility','hidden');
 		  $('body,html').animate({
@@ -50,32 +49,35 @@ $(function() {
 	 });
 	
 	$(".expand").click(function(){
-	    var elem = $(this).parent().clone();
-		$('#expanded-section').prepend(elem);
-		$('.collapse').css('visibility','visible');
-		$('.ui-sortable').fadeOut('fast');
-		$('#expanded-section').fadeIn('fast');	
-		 
-         $('body,html').animate({
-			scrollTop: 0
-		  }, 800);		 
+	      $(this).parent().next().animate({
+			height: "1452px"
+		  }, 1500 );	
+		  
+		  $(this).parent().parent().animate({
+			height: "1508px"
+			}, 1500, function() {	alert("all done")}
+		  );  	
+		  
+		  $(this).parent().next().find('.slider').css('display','none'); 
+		  $(this).parent().next().append('<img id="ext_img" src="img/vertical_index.jpg" />'); 
 		
 	 });	
 	
-	$(".collapse").live("click", function(){
-		$(this).parent().remove();
-		$('.ui-sortable').fadeIn('fast');
-		$('#expanded-section').fadeOut('fast');		
-		$('.collapse').css('visibility','hidden');
-		
-		 $('body,html').animate({
-			scrollTop: 0
-		  }, 800);
+	$(".collapse").click(function() {
+		 $(this).parent().next().find('#ext_img').remove(); 
+		 $(this).parent().next().find('.slider').css('display','block'); 
+		 $(this).parent().next().animate({
+			height: "280px"
+			}, 1500, function() {	alert("all done")}
+		  );  
+				
+		  
+		  $(this).parent().parent().animate({
+			height: "320px"
+		  }, 1500 );	
 	 });
      
    	
-		
-	
 	bindKeyDown();
 	
 	$item.each(function(){
