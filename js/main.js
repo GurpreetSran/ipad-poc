@@ -1,5 +1,5 @@
 $(function() {
-
+     
 	var $sortable = $( "#sortable" );
 	
 	$sortable.sortable({
@@ -15,7 +15,6 @@ $(function() {
 	
 	$sortable.sortable({ handle: '.dragger' });
 	//$sortable.sortable("disable");
-	
 	
 	var $item = $(".item") 
 	var $homepage = $('#homepage');
@@ -49,32 +48,48 @@ $(function() {
 	 });
 	
 	$(".expand").click(function(){
-	      $(this).parent().next().animate({
+           
+		  $(this).css('visibility','hidden');
+		   
+		  $(this).parent().next().append('<img id="ext_img" src="img/vertical_index.jpg" style="position: absolute; top: 0; display:none" />');
+		  
+		  $('#ext_img').fadeIn('fast');
+		  
+		  //$(this).parent().next().find('.slider').fadeOut('fast'); 
+		  
+		  $(this).parent().next().animate({
 			height: "1452px"
-		  }, 1500 );	
+		  }, 1000 );	
 		  
 		  $(this).parent().parent().animate({
-			height: "1508px"
-			}, 1500, function() {	alert("all done")}
+			height: "1495px"
+			}, 700, function() {  $('.collapse').css('visibility','visible'); }
 		  );  	
-		  
-		  $(this).parent().next().find('.slider').css('display','none'); 
-		  $(this).parent().next().append('<img id="ext_img" src="img/vertical_index.jpg" />'); 
 		
 	 });	
 	
 	$(".collapse").click(function() {
-		 $(this).parent().next().find('#ext_img').remove(); 
-		 $(this).parent().next().find('.slider').css('display','block'); 
+		 
+		 $(this).css('visibility','hidden');
+		 
+		 var _this = this; 
+		 
 		 $(this).parent().next().animate({
 			height: "280px"
-			}, 1500, function() {	alert("all done")}
+			}, 700, function() {
+				 $(_this).parent().next().find('#ext_img').fadeOut('fast', function() {
+						$(_this).parent().next().find('#ext_img').remove(); 
+				 }); 
+				 
+				 //$(_this).parent().next().find('.slider').fadeIn('fast'); 
+				 $('.expand').css('visibility','visible');
+			}
 		  );  
 				
 		  
 		  $(this).parent().parent().animate({
 			height: "320px"
-		  }, 1500 );	
+		  }, 700 );	
 	 });
      
    	
@@ -109,8 +124,6 @@ $(function() {
 			}, 500);
 		}
 	};
-	
-	
 });
 
 
@@ -177,7 +190,5 @@ $(window).load(function() {
 	 
 	 $('body').css('visibility', 'visible').css('display','none'); 	
      $('body').fadeIn('slow');
-
-});
-			
+});			
 			

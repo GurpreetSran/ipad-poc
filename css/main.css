@@ -7,7 +7,7 @@ nav{  position:fixed; z-index: 100; background: #000 url(../img/navbar.png) no-r
 #sortable, .art-grid { list-style-type: none; margin: 0; padding: 0; width: 100%; display:block; white-space: nowrap; }
 #sortable li, .art-grid li { margin:0 0 1% 0; height: 320px; width:100%; background:#fff;}
 .dragger { height:100%; width:65px; float:right; }
-.collapse {  height:100%; width:55px; float:left; padding-left:82px;   } 
+.collapse {  height:100%; width:55px; float:left; padding-left:82px; visibility:hidden;  } 
 .expand {  height:100%; width:65px; float:left; }
 .item{  position: relative; background-color: #fff;float:left; margin:10px 3px; background: url(../img/star.png) no-repeat 0 0; }
 #art-container { position: relative; height:0; overflow-x:hidden; }
